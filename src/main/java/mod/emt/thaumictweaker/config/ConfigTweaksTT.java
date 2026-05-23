@@ -29,6 +29,8 @@ public class ConfigTweaksTT {
     public static FluxPollutionCategory flux_pollution = new FluxPollutionCategory();
     @Config.Name("Fortress Armor Tweaks")
     public static FortressArmorCategory fortress_armor = new FortressArmorCategory();
+    @Config.Name("Furious Zombie Tweaks")
+    public static FuriousZombieCategory furious_zombie = new FuriousZombieCategory();
     @Config.Name("Golem Tweaks")
     public static GolemTweaksCategory golem_tweaks = new GolemTweaksCategory();
     @Config.Name("Infusion Enchantment Tweaks")
@@ -145,6 +147,24 @@ public class ConfigTweaksTT {
         @Config.Name("Enable Knockback Resistance")
         @Config.Comment("Gives the Fortress Armor knockback resistance. Chest = 0.4, Legs = 0.3, Helm = 0.3")
         public boolean enableKnockbackResistance = false;
+    }
+
+    public static class FuriousZombieCategory {
+        @Config.Name("Enable Spawning")
+        @Config.Comment("Enables natural spawning for Furious Zombies. [default: true]")
+        @Config.RequiresMcRestart
+        public boolean enableFuriousZombieSpawning = true;
+
+        @Config.Name("Enable Underground Spawning")
+        @Config.Comment("Enables underground spawning for Furious Zombies. [default: false]")
+        @Config.RequiresMcRestart
+        public boolean enableUndergroundSpawning = false;
+
+        @Config.Name("Spawn Weight")
+        @Config.Comment("Default spawn weight of Furious Zombies. [default: 5]")
+        @Config.RangeInt(min = 0)
+        @Config.RequiresMcRestart
+        public int spawnWeight = 5;
     }
 
     public static class GolemTweaksCategory {

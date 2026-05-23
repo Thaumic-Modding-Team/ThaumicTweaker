@@ -1,0 +1,24 @@
+package mod.emt.thaumictweaker.mixins.entities;
+
+import mod.emt.thaumictweaker.config.ConfigTweaksTT;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import org.spongepowered.asm.mixin.Mixin;
+import thaumcraft.common.entities.monster.EntityGiantBrainyZombie;
+
+@Mixin(value = EntityGiantBrainyZombie.class, remap = false)
+public class EntityGiantBrainyZombieMixin extends EntityMob {
+    public EntityGiantBrainyZombieMixin(World world) {
+        super(world);
+    }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        if (!ConfigTweaksTT.furious_zombie.enableUndergroundSpawning) {
+            return super.getCanSpawnHere() && this.world.canSeeSky(new BlockPos(this));
+        } else {
+            return super.getCanSpawnHere();
+        }
+    }
+}
