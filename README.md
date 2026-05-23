@@ -9,6 +9,7 @@ Tweaks for Thaumcraft 6. All the Thaumcraft tweaks a tweaker could want.
 
 ## Fixes
 - Fixed Boots of the Traveler and Cloud Ring screen shake and damage sound when taking zero fall damage
+- Fixed Hand Mirror not being able to be placed on pedestals
 - Fixed Giant Taintacles spawning with reduced health
 - Fixed Primal Crusher and all void tools re-equipping when repairing
 - Fixed most void tools not having `Lesser Sapping` on their tooltips

@@ -1,4 +1,10 @@
 # Changelog ThaumicTweaker
+## 1.3.1
+### Added
+- Hand mirrors can now be placed directly onto pedestals
+
+---
+
 ## 1.3.0
 ### Added
 - Fully merged Thaumic Inventory Scanning into the mod with major improvements

@@ -56,7 +56,7 @@ dependencies {
     implementation rfg.deobf('curse.maven:baubles-227083:2518667')
 
     // Thaumcraft Addons
-    implementation rfg.deobf('curse.maven:thaumic-augmentation-319441:6047659')
+    compileOnly rfg.deobf('curse.maven:thaumic-augmentation-319441:6047659')
 
     // Example - Dependency descriptor:
     // 'com.google.code.gson:gson:2.8.6' << group: com.google.code.gson, name:gson, version:2.8.6
