@@ -2,7 +2,7 @@
 ## 1.3.1
 ### Added
 - Hand mirrors can now be placed directly onto pedestals
-
+- Added tweak to enable Furious Zombies spawning at night (moved from New Crimson Revelations)
 ---
 
 ## 1.3.0
