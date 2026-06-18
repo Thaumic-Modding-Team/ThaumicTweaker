@@ -2,6 +2,8 @@
 ## 1.3.2
 ### Changed
 - Ars Magica 2: Rekindled ores are now supported by Sounding Color Overrides
+### Fixed
+- Fixed Firebat hitbox eye height
 
 ---
 

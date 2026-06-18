@@ -18,6 +18,7 @@ Tweaks for Thaumcraft 6. All the Thaumcraft tweaks a tweaker could want.
 - Fixed Flux Fifts not collapsing when completely being drained by machines and devices such as Void Siphons
 - Fixed Sword of Zephyr being interrupted when durability is lost during its whirlwind ability
 - Fixed Magical Hand Mirrors not being placeable on pedestals
+- Fixed Firebat hitbox eye height
 
 ---
 

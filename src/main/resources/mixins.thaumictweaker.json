@@ -15,6 +15,7 @@
     "entities.ChampionMobWardedMixin" ,
     "entities.EntityEldritchGuardianMixin" ,
     "entities.EntityEldritchWardenMixin" ,
+    "entities.EntityFireBatMixin" ,
     "entities.EntityFluxRiftMixin" ,
     "entities.EntityFocusMineMixin" ,
     "entities.EntityGiantBrainyZombieMixin" ,
