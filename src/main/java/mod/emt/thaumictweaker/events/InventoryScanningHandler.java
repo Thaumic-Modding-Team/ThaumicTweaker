@@ -71,7 +71,7 @@ public class InventoryScanningHandler {
                 TextFormatting color = isScannable ? TextFormatting.GREEN : TextFormatting.RED;
                 if (hasNoAspects) {
                     String text = I18n.format("tooltip.thaumictweaker:scanning_available.no_aspects");
-                    event.getToolTip().add(TextFormatting.GRAY + text);
+                    event.getToolTip().add(TextFormatting.DARK_GRAY + text);
                 } else {
                     String text = I18n.format("tooltip.thaumictweaker:scanning_available." + (isScannable ? "true" : "false"));
                     event.getToolTip().add(color + text);
@@ -125,7 +125,7 @@ public class InventoryScanningHandler {
                 boolean newIsHoveringPlayer = isHoveringPlayer((GuiContainer) event.getGui(), event.getMouseX(), event.getMouseY());
 
                 //Rendering Tooltips and aspects
-                if(newSlot != null && newSlot.getHasStack()) {
+                if(newSlot != null && newSlot.getHasStack() && event.getGui() instanceof GuiScreenAccessor) {
                     ((GuiScreenAccessor) event.getGui()).invokeRenderToolTip(newSlot.getStack(), event.getMouseX(), event.getMouseY());
                 } else if(newIsHoveringPlayer && !ScanningManager.isThingStillScannable(player, player)) {
                     renderPlayerAspects(event.getGui(), event.getMouseX(), event.getMouseY());
