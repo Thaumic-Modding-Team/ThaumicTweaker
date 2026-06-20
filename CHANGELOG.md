@@ -4,6 +4,7 @@
 - Ars Magica 2: Rekindled ores are now supported by Sounding Color Overrides
 ### Fixed
 - Fixed Firebat hitbox eye height
+- Fixed a server crash with scanning
 
 ---
 
