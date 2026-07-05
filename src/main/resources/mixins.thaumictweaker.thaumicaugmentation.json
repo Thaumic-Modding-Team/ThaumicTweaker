@@ -7,7 +7,8 @@
   "compatibilityLevel": "JAVA_8" ,
   "mixins": [
     "TileImpetusDiffuserMixin" ,
-    "TileRiftMoverInputMixin"
+    "TileRiftMoverInputMixin" ,
+    "TileRiftMoverOutputMixin"
   ] ,
   "server": [] ,
   "client": []
