@@ -1,7 +1,13 @@
 # Changelog ThaumicTweaker
-## 1.3.3
+## 1.3.4
 ### Added
 - Added fluid support to the Brain in a Jar
+
+---
+
+## 1.3.3
+### Fixed
+- Fixed Flux Rift drain fix causing rifts to disappear when they're interacted by Thaumic Augmentation's Metaspatial Extruder
 
 ---
 
