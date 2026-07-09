@@ -13,6 +13,8 @@ import net.minecraftforge.common.config.Config;
 public class ConfigTweaksTT {
     @Config.Name("Apprentice's Ring Tweaks")
     public static ApprenticesRingCategory apprentices_ring = new ApprenticesRingCategory();
+    @Config.Name("Brain Jar Tweaks")
+    public static BrainJarCategory brain_jar = new BrainJarCategory();
     @Config.Name("Crucible Tweaks")
     public static CrucibleCategory crucible = new CrucibleCategory();
     @Config.Name("Crimson Cult Robes Tweaks")
@@ -64,6 +66,23 @@ public class ConfigTweaksTT {
         @Config.Name("Apprentice's Ring Vis Discount")
         @Config.Comment("The Vis discount granted by the Apprentice's Ring.")
         public int visDiscount = 5;
+    }
+
+    public static class BrainJarCategory {
+        @Config.RequiresMcRestart
+        @Config.Name("Experience Fluid Support")
+        @Config.Comment("When enabled, liquid experience can be inserted into or extracted from the Brain in a Jar.")
+        public boolean enableFluidSupport = false;
+
+        @Config.Name("Experience Fluids")
+        @Config.Comment({
+                "Experience fluid names and their conversion rates per point of experience.",
+                "  Example: xpjuice=20"
+        })
+        public String[] experienceFluids = new String[] {
+                "experience=20",
+                "xpjuice=20"
+        };
     }
 
     public static class CrimsonCultRobesCategory {

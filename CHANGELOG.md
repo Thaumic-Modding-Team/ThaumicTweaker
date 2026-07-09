@@ -1,4 +1,10 @@
 # Changelog ThaumicTweaker
+## 1.3.3
+### Added
+- Added fluid support to the Brain in a Jar
+
+---
+
 ## 1.3.2
 ### Changed
 - Ars Magica 2: Rekindled ores are now supported by Sounding Color Overrides

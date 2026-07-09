@@ -1,5 +1,6 @@
 package mod.emt.thaumictweaker.util.libs;
 
+import com.google.common.collect.ImmutableMap;
 import mod.emt.thaumictweaker.config.ConfigOverhaulsTT;
 import mod.emt.thaumictweaker.config.ConfigTweaksTT;
 import mod.emt.thaumictweaker.util.helpers.LogHelper;
@@ -12,6 +13,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -23,11 +26,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ModTags {
+    private static ImmutableMap<Fluid, Integer> BRAIN_JAR_XP_FLUIDS;
     private static final Map<Block, Integer> CRUCIBLE_HEAT_SOURCES = new LinkedHashMap<>();
     private static final Map<Class<? extends EntityCreature>, Integer> CHAMPION_MOBS = new HashMap<>();
     private static final Map<BiomeDictionary.Type, Integer> CHAMPION_BIOME_MODIFIER = new HashMap<>();
     private static final Set<ResourceLocation> VIS_EXHAUST_BLACKLIST = new HashSet<>();
     private static final Map<String, Integer> SOUNDING_COLOR_OVERRIDES = new HashMap<>();
+
+    public static ImmutableMap<Fluid, Integer> getBrainJarFluids() {
+        return BRAIN_JAR_XP_FLUIDS;
+    }
 
     public static boolean isCrucibleHeatSource(Block block, int meta) {
         if(CRUCIBLE_HEAT_SOURCES.containsKey(block)) {
@@ -79,11 +87,36 @@ public class ModTags {
     }
 
     public static void syncConfig() {
+        parseBrainJarXpFluids();
         parseCrucibleHeatSources();
         parseChampionMobWhitelist();
         parseChampionBiomeModifiers();
         parseFluxPhageBlacklist();
         parseSoundingColorOverrides();
+    }
+
+    private static void parseBrainJarXpFluids() {
+        ImmutableMap.Builder<Fluid, Integer> builder = ImmutableMap.builder();
+        Pattern pattern = Pattern.compile("^(.+)=(\\d+)$");
+        for(String str : ConfigTweaksTT.brain_jar.experienceFluids) {
+            try {
+                Matcher matcher = pattern.matcher(str);
+                if (matcher.find()) {
+                    Fluid fluid = FluidRegistry.getFluid(matcher.group(1));
+                    int conversionRate = Integer.parseInt(matcher.group(2));
+                    if(fluid != null && conversionRate > 0) {
+                        builder.put(fluid, conversionRate);
+                    } else {
+                        LogHelper.warn("Skipping brain jar experience fluid. No fluid found: " + str);
+                    }
+                } else {
+                    throw new IllegalArgumentException();
+                }
+            } catch (Exception e) {
+                LogHelper.error("Invalid experience fluid configuration string: " + str);
+            }
+        }
+        BRAIN_JAR_XP_FLUIDS = builder.build();
     }
 
     private static void parseCrucibleHeatSources() {
@@ -105,7 +138,7 @@ public class ModTags {
                     throw new IllegalArgumentException();
                 }
             } catch (Exception e) {
-                LogHelper.error("Invalid configuration string: " + string);
+                LogHelper.error("Invalid crucible heat source configuration string: " + string);
             }
         }
     }
@@ -128,7 +161,7 @@ public class ModTags {
                     }
                 }
             } catch(Exception e) {
-                LogHelper.error("Invalid config string: " + configStr);
+                LogHelper.error("Invalid champion mob configuration string: " + configStr);
             }
         }
     }
@@ -151,7 +184,7 @@ public class ModTags {
 
                 }
             } catch (Exception e) {
-                LogHelper.error("Invalid config string: " + configStr);
+                LogHelper.error("Invalid champion spawn biome modifier configuration string: " + configStr);
             }
         }
     }

@@ -81,6 +81,8 @@ Tweaks for Thaumcraft 6. All the Thaumcraft tweaks a tweaker could want.
 - **Apprentice's Ring Tweaks:**
   - Allow the Apprentice's Ring to be looted from some vanilla structures
   - Modify the Vis Discount granted by the Apprentice's Ring
+- **Brain in a Jar Tweaks:**
+  - Liquid experience can now be inserted/extracted from the Brain in a Jar
 - **Champion Mob Tweaks:**
   - Add unimplemented Thaumcraft Champion mob content
   - Define what mobs can become champions as well as the chance specific mobs can become champions

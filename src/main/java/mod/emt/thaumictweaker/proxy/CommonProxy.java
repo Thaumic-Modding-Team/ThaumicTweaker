@@ -3,6 +3,7 @@ package mod.emt.thaumictweaker.proxy;
 import mod.emt.thaumictweaker.compat.crafttweaker.CrafttweakerTT;
 import mod.emt.thaumictweaker.config.ConfigOverhaulsTT;
 import mod.emt.thaumictweaker.config.ConfigTweaksTT;
+import mod.emt.thaumictweaker.events.BrainJarCapabilityHandler;
 import mod.emt.thaumictweaker.events.ChampionMobHandler;
 import mod.emt.thaumictweaker.events.RunicShieldingHandler;
 import mod.emt.thaumictweaker.network.PacketHandlerTT;
@@ -20,10 +21,11 @@ import java.util.List;
 
 public class CommonProxy {
     public void preInit() {
-        if(ModIds.crafttweaker.isLoaded) MinecraftForge.EVENT_BUS.register(new CrafttweakerTT());
+        if (ModIds.crafttweaker.isLoaded) MinecraftForge.EVENT_BUS.register(new CrafttweakerTT());
 
-        if(ConfigOverhaulsTT.championMobOverhaul) MinecraftForge.EVENT_BUS.register(new ChampionMobHandler());
-        if(ConfigOverhaulsTT.runicShieldingOverhaul) MinecraftForge.EVENT_BUS.register(new RunicShieldingHandler());
+        if (ConfigTweaksTT.brain_jar.enableFluidSupport) MinecraftForge.EVENT_BUS.register(new BrainJarCapabilityHandler());
+        if (ConfigOverhaulsTT.championMobOverhaul) MinecraftForge.EVENT_BUS.register(new ChampionMobHandler());
+        if (ConfigOverhaulsTT.runicShieldingOverhaul) MinecraftForge.EVENT_BUS.register(new RunicShieldingHandler());
     }
 
     public void init() {
