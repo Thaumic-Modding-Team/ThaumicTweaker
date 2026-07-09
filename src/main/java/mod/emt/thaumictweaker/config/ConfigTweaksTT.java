@@ -76,7 +76,9 @@ public class ConfigTweaksTT {
 
         @Config.Name("Experience Fluids")
         @Config.Comment({
-                "Experience fluid names and their conversion rates per point of experience.",
+                "Experience fluid names and their conversion rates per point of experience. The first valid fluid",
+                "in this list will have priority when extracting any fluid.",
+                "  Format: fluidName=conversionRate",
                 "  Example: xpjuice=20"
         })
         public String[] experienceFluids = new String[] {
