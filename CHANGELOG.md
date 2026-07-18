@@ -3,7 +3,7 @@
 ### Added
 - Added fluid support to the Brain in a Jar
 ### Changed
-- Improved autocomplete tab logic when using the `/tc researc` command
+- Improved autocomplete tab logic when using the `/tc research` command
 ### Fixed
 - Fixed Enhanced `/tc` command breaking `/tc reload`
 
