@@ -2,6 +2,10 @@
 ## 1.3.4
 ### Added
 - Added fluid support to the Brain in a Jar
+### Changed
+- Improved autocomplete tab logic when using the `/tc researc` command
+### Fixed
+- Fixed Enhanced `/tc` command breaking `/tc reload`
 
 ---
 

@@ -60,7 +60,7 @@ public class SubCommandResearch implements ISubCommand {
                         }
                     }
                 }
-                return Lists.newArrayList(researchSet);
+                return CommandBase.getListOfStringsMatchingLastWord(args, Lists.newArrayList(researchSet));
             }
         }
         return Collections.emptyList();

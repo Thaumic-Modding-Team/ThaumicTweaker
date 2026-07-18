@@ -61,9 +61,9 @@ public class CommandBaseTT extends CommandBase {
 
     @Override
     public void execute(@NotNull MinecraftServer server, @NotNull ICommandSender sender, String[] args) throws CommandException {
-        if(args.length == 1) {
+        if(args.length == 0) {
             throw new CommandException(new TextComponentTranslation("command.thaumictweaker:invalid").getFormattedText());
-        }else if(args.length >= 1) {
+        } else {
             if(!subCommands.containsKey(args[0])) {
                 throw new CommandException(new TextComponentTranslation("command.thaumictweaker:invalid").getFormattedText());
             } else {
