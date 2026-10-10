@@ -1,4 +1,13 @@
 # Changelog ThaumicTweaker
+## 1.3.5
+### Added
+### Changed
+- Changed Nerfed Healing Effect overhaul logic to slightly decrease heal potency
+### Fixed
+- Fixed Nerfed Heal Focus Effect overhaul being enabled by default
+
+---
+
 ## 1.3.4
 ### Added
 - Added fluid support to the Brain in a Jar

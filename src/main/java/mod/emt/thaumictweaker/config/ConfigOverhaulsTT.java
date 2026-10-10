@@ -23,10 +23,9 @@ public class ConfigOverhaulsTT {
     @Config.Comment("Changes Thaumcraft mobs and bosses so loot is generated from loot tables instead of hardcoded drops.")
     public static boolean lootTableOverhaul = false;
 
-    @Config.RequiresMcRestart
     @Config.Name("Nerfed Heal Focus Effect")
     @Config.Comment("Changes Focus Effect: Heal to a regeneration effect instead of an instant heal.")
-    public static boolean nerfedHealFocus = true;
+    public static boolean nerfedHealFocus = false;
 
     @Config.RequiresMcRestart
     @Config.Name("Runic Shielding Overhaul")

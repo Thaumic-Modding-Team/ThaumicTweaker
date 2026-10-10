@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.PotionHealth;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.RayTraceResult;
 import org.spongepowered.asm.mixin.Mixin;
@@ -35,15 +36,16 @@ public abstract class FocusEffectHealMixin extends FocusEffect {
             method = "execute",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/EntityLivingBase;heal(F)V"
+                    target = "Lnet/minecraft/entity/EntityLivingBase;heal(F)V",
+                    remap = true
             ),
             remap = false
     )
     public void replaceHealWithRegen(EntityLivingBase entity, float amount) {
         if(ConfigOverhaulsTT.nerfedHealFocus) {
-            int duration = (1 + this.getSettingValue("power")) * 20;
+            int duration = (int) (amount * 25);
             if(MobEffects.REGENERATION != null) {
-                entity.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, duration, 2, true, true));
+                entity.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, duration, 1, true, true));
             }
         } else {
             entity.heal(amount);
