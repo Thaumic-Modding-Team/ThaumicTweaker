@@ -130,6 +130,8 @@ Tweaks for Thaumcraft 6. All the Thaumcraft tweaks a tweaker could want.
   - Modify the Vis discount granted by each piece of armor
 - **Thaumonomicon Tweaks:**
   - Disable zoom while browsing Thamonomicon categories
+- **Tooltip Tweaks:**
+  - Display the maximum charge Vis containing items can hold
 - **Vis Generator Tweaks:** 
   - Change the amount of RF generated per point of Vis and the RF output per tick
 - **Void Siphon Tweaks:** 

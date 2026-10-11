@@ -49,6 +49,8 @@ public class ConfigTweaksTT {
     public static ResearchTableCategory research_table = new ResearchTableCategory();
     @Config.Name("Thaumonomicon Tweaks")
     public static ThaumonomiconCategory thaumonomicon = new ThaumonomiconCategory();
+    @Config.Name("Tooltip Tweaks")
+    public static TooltipsCategory tooltips = new TooltipsCategory();
     @Config.Name("Vis Generator Tweaks")
     public static VisGeneratorCategory vis_generator = new VisGeneratorCategory();
     @Config.Name("Void Thaumaturge Robes Tweaks")
@@ -392,6 +394,12 @@ public class ConfigTweaksTT {
         @Config.Name("Disable Thaumonomicon Zoom")
         @Config.Comment("Disables the scroll wheel zoom feature while browsing Thaumonomicon categories.")
         public boolean disableThaumonomiconZoom = false;
+    }
+
+    public static class TooltipsCategory {
+        @Config.Name("Max Vis Charge Tooltip")
+        @Config.Comment("Extends the 'Vis Charge' tooltip to also include maximum charge the item can hold.")
+        public boolean maxVisTooltip = false;
     }
 
     public static class VisGeneratorCategory {

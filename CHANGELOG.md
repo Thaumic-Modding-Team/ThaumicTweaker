@@ -1,6 +1,7 @@
 # Changelog ThaumicTweaker
 ## 1.3.5
 ### Added
+- Added tweak to display the maximum Vis charge items can hold
 ### Changed
 - Changed Nerfed Healing Effect overhaul logic to slightly decrease heal potency
 ### Fixed
