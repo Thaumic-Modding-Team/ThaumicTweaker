@@ -6,6 +6,8 @@ import mod.emt.thaumictweaker.events.RunicShieldingHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -40,11 +42,13 @@ public class PlayerEventsMixin {
         return (float) RunicShieldingHandler.getRunicShielding(player);
     }
 
+    @SideOnly(Side.CLIENT)
     @Redirect(
             method = "tooltipEvent",
             at = @At(
                     value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z"
+                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
+                    ordinal = 3
             )
     )
     private static <E> boolean enhancedVisTooltipMixin(List<String> instance, E e, @Local(argsOnly = true) ItemTooltipEvent event) {
