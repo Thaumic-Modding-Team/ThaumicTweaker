@@ -1,4 +1,10 @@
 # Changelog ThaumicTweaker
+## 1.3.6
+### Fixed
+- Fixed max charge tooltip
+
+---
+
 ## 1.3.5
 ### Added
 - Added tweak to display the maximum Vis charge items can hold
